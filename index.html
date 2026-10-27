@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Discover thoughtfully selected finds across technology, home, lifestyle and more.">
+  <title>Fraponova — Discover Beyond Ordinary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="notice">Curated worldwide · Shop directly with trusted retailers · Independent recommendations</div>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Fraponova home"><span class="mark">✳</span> FRAPO<span class="accent">NOVA.</span></a>
+    <nav aria-label="Primary"><a href="#categories">Categories</a><a href="#discover">Discover</a><a href="#how">How it works</a></nav>
+    <a href="#discover" class="header-button">Explore finds <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="green-dot"></span> THE WORLD'S GOOD STUFF, ALL IN ONE PLACE</div>
+        <h1>Find your <em>next</em><br>favorite thing.</h1>
+        <p>Discover great products from independent brands and established retailers. One beautifully curated destination. No unnecessary noise.</p>
+        <div class="hero-actions"><a class="primary" href="#discover">Browse discoveries <span>↗</span></a><a class="underlined" href="#how">How it works ↗</a></div>
+        <div class="hero-bottom"><span>01 / DISCOVER</span><span>02 / COMPARE</span><span>03 / SHOP DIRECT</span></div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="glow"></div>
+        <div class="display-card card-a"><div class="abstract-device"></div><span>SMART LIVING <b>↗</b></span></div>
+        <div class="display-card card-b"><div class="abstract-bag"></div><span>EVERYDAY EDIT <b>↗</b></span></div>
+        <div class="center-symbol">✳</div>
+        <div class="art-label">A better way to browse / 2026</div>
+      </div>
+    </section>
+
+    <section class="strip"><span>EXPLORE MORE. SETTLE FOR LESS.</span><span>✳</span><span>DISCOVER NEW FAVORITES</span><span>✳</span><span>SHOP SMARTER</span></section>
+
+    <section id="categories" class="section categories">
+      <div class="section-intro"><div><p class="kicker">01 — THE EDIT</p><h2>Shop your <i>curiosity.</i></h2></div><p>Choose a category and uncover the products worth knowing about.</p></div>
+      <div class="category-grid">
+        <button class="category category-dark" data-category="Electronics"><span class="category-num">01 / TECH</span><span class="category-icon">⌁</span><strong>Tech & Gadgets</strong><span class="circle-link">↗</span></button>
+        <button class="category category-sand" data-category="Home"><span class="category-num">02 / LIVING</span><span class="category-icon">◈</span><strong>Home & Living</strong><span class="circle-link">↗</span></button>
+        <button class="category category-lilac" data-category="Beauty"><span class="category-num">03 / CARE</span><span class="category-icon">✿</span><strong>Beauty & Care</strong><span class="circle-link">↗</span></button>
+        <button class="category category-mint" data-category="Lifestyle"><span class="category-num">04 / STYLE</span><span class="category-icon">✧</span><strong>Lifestyle</strong><span class="circle-link">↗</span></button>
+      </div>
+    </section>
+
+    <section id="discover" class="section discoveries">
+      <div class="section-intro"><div><p class="kicker">02 — HANDPICKED</p><h2>Worth a <i>closer look.</i></h2></div><p>Products go live here once their retailer and affiliate links have been verified.</p></div>
+      <div class="filters"><label for="search">SEARCH THE EDIT</label><input id="search" type="search" placeholder="Search products or brands..."><select id="category-select" aria-label="Filter by category"><option value="all">All categories</option><option>Electronics</option><option>Home</option><option>Beauty</option><option>Lifestyle</option></select></div>
+      <div id="products" class="product-grid"></div><p id="empty" class="empty" hidden>No matching products yet. New finds are on their way.</p>
+    </section>
+
+    <section id="how" class="how"><div class="how-text"><p class="kicker">03 — THE IDEA</p><h2>Simple to browse.<br><i>Easy to love.</i></h2></div><div class="steps"><div><b>01</b><strong>Discover</strong><p>Explore products we've selected from around the web.</p></div><div><b>02</b><strong>Choose</strong><p>See honest product details and compare your options.</p></div><div><b>03</b><strong>Shop direct</strong><p>Complete your purchase on the retailer's website. They manage payment, shipping and returns.</p></div></div></section>
+  </main>
+  <footer><div class="footer-top"><span class="brand"><span class="mark">✳</span> FRAPO<span class="accent">NOVA.</span></span><span>Find better. Every day.</span></div><p class="disclosure">Affiliate disclosure: We may earn a commission when you buy through links on this site, at no additional cost to you. Prices, availability and shipping terms are set by the retailer. Purchases, payments, delivery and returns are handled by the seller.</p><div class="footer-bottom"><span>© <span id="year"></span> Fraponova</span><span>Independent affiliate discovery store</span></div></footer>
+  <script src="/app.js" defer></script>
+</body>
+</html>
