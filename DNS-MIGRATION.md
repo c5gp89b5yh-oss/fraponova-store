@@ -1,29 +1,40 @@
-# Fraponova.com DNS — verified recommendations, 2026-10-27
+# Fraponova DNS migration — external BusinessIdentity DNS
 
-**Vercel project**: `fraponova-store` in the khdiras260 account.
-**Domain names**: `fraponova.com` and `www.fraponova.com` are already associated with the Vercel project and verified within Vercel.
-**DNS authority**: ns1.hosting.businessidentity.llc / ns2.hosting.businessidentity.llc — external, NOT Vercel.
-**Website still not routed**: DNS at registrar points `@` and `www` to `66.223.49.89`.
+**Status (2026-10-27): NOT APPLIED.** External DNS is currently delegated to:
+- `ns1.hosting.businessidentity.llc`
+- `ns2.hosting.businessidentity.llc`
 
-## Exact web changes to apply at current DNS provider
+Fraponova project: `fraponova-store` (Vercel). The project domains `fraponova.com` and `www.fraponova.com` are added and verified in Vercel, but apex DNS still resolves to `66.223.49.89` and Vercel reports misconfigured.
 
-1. Replace old `@` A `66.223.49.89` with **TWO** root A records:
-    - Type A, Host @, Value `216.198.79.1`, TTL 1 min
-    - Type A, Host @, Value `64.29.17.1`, TTL 1 min
-   These are Vercel primary rank-1 recommended apex IPs for *this connected project*. Alternative legacy fallback is 76.76.21.21 but don't combine with the rank-1 recommendations unnecessarily.
-2. Delete the old A `www` -> `66.223.49.89`.
-3. Create Type CNAME, Host `www`, Value `5e0740039641fd19.vercel-dns-017.com.` TTL 1 min.
-4. Don't set both A and CNAME for www.
+## Web records to replace at current authoritative DNS provider
 
-## Preserve email and existing services
+Vercel get_domain_config latest recommendations:
+| Type | Host | Target |
+| --- | --- | --- |
+| A | @ | 216.198.79.1 |
+| A | @ | 64.29.17.1 |
+| CNAME | www | 5e0740039641fd19.vercel-dns-017.com. |
 
-- Preserve A `mail` -> `66.223.49.89`
-- Preserve MX `@`, priority 10, `mailserver.businessidentity.llc.`
-- Preserve TXT `_dmarc`, TXT `postal-4mto8r._domainkey`, TXT `_acme-challenge` x2, CNAME `psrp`.
-- Preserve NS at registrar and zone: `NS1.HOSTING.BUSINESSIDENTITY.LLC.`, `NS2.HOSTING.BUSINESSIDENTITY.LLC.`
-- Leave wildcard A `*` unchanged for now and audit separately.
-- SPF TXT `v=spf1 a mx include:spf.postal.businessidentity.llc ~all`: After changing root A, the `a` mechanism will authorize Vercel rather than the previous web host. Discuss with mail provider whether `a` is needed for outgoing mail before editing SPF. Never add a second SPF record.
-- DNS actions here are **instructions only**: no edits have been made to the external DNS provider.
+- Replace existing apex A `@` -> `66.223.49.89` with the TWO A records above.
+- Remove existing `www` A -> `66.223.49.89` before creating the CNAME; a CNAME and A cannot coexist for the same name.
+- Confirm project-specific recommendations again in Vercel **Settings → Domains** before saving, since they may change.
+- Leave wildcard A (`*`) untouched unless separately reviewed.
 
-## Verification
-After DNS propagation, verify HTTPS for apex and www, redirect (www to apex), and live MX/SPF/DKIM/DMARC. Confirm Vercel Project → Domains shows correctly configured; then test receiving and sending email.
+## Mail and verification records to PRESERVE
+- `mail` A -> `66.223.49.89`
+- `@` MX priority 10 -> `mailserver.businessidentity.llc.`
+- `@` TXT SPF -> `v=spf1 a mx include:spf.postal.businessidentity.llc ~all`
+- `_dmarc` TXT -> retain exact existing DMARC policy
+- `postal-4mto8r._domainkey` TXT -> retain exact existing DKIM key
+- `_acme-challenge` TXT entries -> retain unless provider confirms no longer needed
+- `psrp` CNAME -> `rp.postal.businessidentity.llc.`
+- `@` NS delegation -> retain `ns1.hosting.businessidentity.llc`, `ns2.hosting.businessidentity.llc`
+
+**Critical SPF review:** The existing SPF authorizes the root domain's A record via `a`. Changing the root A will change what IP the `a` mechanism authorizes. Ask the current mail host if the old IP `66.223.49.89` also sends outgoing mail. If yes, include it explicitly as `ip4:66.223.49.89` while preserving one single SPF TXT record, or follow provider's supported SPF settings. DO NOT blindly change SPF.
+
+## After changing DNS
+1. Confirm `fraponova.com` and `www.fraponova.com` serve Vercel with valid TLS and www redirects to apex.
+2. Confirm existing MX, SPF, DKIM, and DMARC; test outbound and inbound professional mail and verify SPF/DKIM alignment.
+3. Leave `noindex` until the affiliate catalogue and policies are ready.
+
+External DNS changes cannot be performed from Vercel alone while authoritative NS is BusinessIdentity.
