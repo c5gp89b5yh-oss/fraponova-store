@@ -1,64 +1,142 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">
-  <meta name="description" content="Discover thoughtfully selected finds across technology, home, lifestyle and more.">
-  <title>Fraponova — Discover Beyond Ordinary</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f6ef">
+  <meta name="description" content="Fraponova Pets celebrates cats, dogs and the incredible animal world. Discover inspiring photography, caring guides and thoughtful pet discoveries.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fraponova Pets — For Every Animal Lover">
+  <meta property="og:description" content="A little more love for every paw, wing and wonderful creature.">
+  <meta property="og:url" content="https://fraponova.com/">
+  <link rel="canonical" href="https://fraponova.com/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+  <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
+  <script defer src="/app.js"></script>
+  <title>Fraponova Pets | A World of Animal Love</title>
 </head>
 <body>
-  <div class="notice">Curated worldwide · Shop directly with trusted retailers · Independent recommendations</div>
-  <header class="site-header">
-    <a class="brand" href="/" aria-label="Fraponova home"><span class="mark">✳</span> FRAPO<span class="accent">NOVA.</span></a>
-    <nav aria-label="Primary"><a href="#categories">Categories</a><a href="#discover">Discover</a><a href="#how">How it works</a></nav>
-    <a href="#discover" class="header-button">Explore finds <span>↗</span></a>
+  <svg aria-hidden="true" class="icon-defs" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 1 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="2.7" y="2.7" width="18.6" height="18.6" rx="5.3"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.7" cy="6.6" r=".9" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2.6" y="5" width="18.8" height="14" rx="2"/><path d="m3.4 6.3 8.6 6.4 8.6-6.4"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7.2"/><path d="m16.2 16.2 5 5"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m5 5 14 14M19 5 5 19"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 1 2.6 8.4L23 12l-8.4 2.6L12 23l-2.6-8.4L1 12l8.4-2.6Z"/></symbol>
+  </svg>
+  <div class="topbar"><span>MADE FOR ANIMAL LOVERS, EVERYWHERE</span><span class="topbar-right">Curiosity • Connection • Care <svg class="icon icon-heart"><use href="#i-heart"/></svg></span></div>
+  <header class="header" id="top">
+    <div class="nav-wrap container">
+      <a class="brand" href="/" aria-label="Fraponova Pets homepage">
+        <img src="/favicon.svg" alt="" width="42" height="42">
+        <span>frapo<span>nova</span><small>PETS & CO.</small></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#explore">Explore</a>
+        <a href="#animals">Animals</a>
+        <a href="#stories">Our Journal</a>
+        <a href="#about">Our World</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="social-icon" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" title="Instagram — profile link to be added" aria-label="Open Instagram"><svg class="icon"><use href="#i-instagram"/></svg></a>
+        <a class="nav-contact" href="mailto:support@fraponova.com"><svg class="icon"><use href="#i-mail"/></svg><span>Get in touch</span></a>
+        <button class="menu-toggle" type="button" id="menu-toggle" aria-expanded="false" aria-label="Open menu" aria-controls="mobile-menu"><svg class="icon"><use href="#i-menu"/></svg></button>
+      </div>
+    </div>
+    <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation" hidden>
+      <a href="#explore">Explore the world</a><a href="#animals">Meet the animals</a><a href="#stories">Stories & advice</a><a href="#about">About us</a><a href="mailto:support@fraponova.com">Contact us</a>
+    </nav>
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <div class="eyebrow"><span class="green-dot"></span> THE WORLD'S GOOD STUFF, ALL IN ONE PLACE</div>
-        <h1>Find your <em>next</em><br>favorite thing.</h1>
-        <p>Discover great products from independent brands and established retailers. One beautifully curated destination. No unnecessary noise.</p>
-        <div class="hero-actions"><a class="primary" href="#discover">Browse discoveries <span>↗</span></a><a class="underlined" href="#how">How it works ↗</a></div>
-        <div class="hero-bottom"><span>01 / DISCOVER</span><span>02 / COMPARE</span><span>03 / SHOP DIRECT</span></div>
+        <div class="hero-kicker"><span class="small-star">✳</span> ALL CREATURES, BIG & SMALL</div>
+        <h1 id="hero-title">A world full of <em>little wonders.</em></h1>
+        <p>For the love of curious cats, loyal dogs, gentle giants, and every extraordinary creature in between.</p>
+        <div class="hero-buttons">
+          <a class="btn btn-dark" href="#animals">Explore animal world <svg class="icon"><use href="#i-arrow"/></svg></a>
+          <a class="text-link" href="#stories">Read our journal <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="hero-note"><span class="little-paws">✿</span> A softer corner of the internet, made with love.</div>
+        <div class="hero-stamp" aria-hidden="true"><span>GOOD THINGS</span><b>✳</b><span>HAVE PAWS</span></div>
       </div>
-      <div class="hero-art" aria-hidden="true">
-        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-        <div class="glow"></div>
-        <div class="display-card card-a"><div class="abstract-device"></div><span>SMART LIVING <b>↗</b></span></div>
-        <div class="display-card card-b"><div class="abstract-bag"></div><span>EVERYDAY EDIT <b>↗</b></span></div>
-        <div class="center-symbol">✳</div>
-        <div class="art-label">A better way to browse / 2026</div>
-      </div>
-    </section>
-
-    <section class="strip"><span>EXPLORE MORE. SETTLE FOR LESS.</span><span>✳</span><span>DISCOVER NEW FAVORITES</span><span>✳</span><span>SHOP SMARTER</span></section>
-
-    <section id="categories" class="section categories">
-      <div class="section-intro"><div><p class="kicker">01 — THE EDIT</p><h2>Shop your <i>curiosity.</i></h2></div><p>Choose a category and uncover the products worth knowing about.</p></div>
-      <div class="category-grid">
-        <button class="category category-dark" data-category="Electronics"><span class="category-num">01 / TECH</span><span class="category-icon">⌁</span><strong>Tech & Gadgets</strong><span class="circle-link">↗</span></button>
-        <button class="category category-sand" data-category="Home"><span class="category-num">02 / LIVING</span><span class="category-icon">◈</span><strong>Home & Living</strong><span class="circle-link">↗</span></button>
-        <button class="category category-lilac" data-category="Beauty"><span class="category-num">03 / CARE</span><span class="category-icon">✿</span><strong>Beauty & Care</strong><span class="circle-link">↗</span></button>
-        <button class="category category-mint" data-category="Lifestyle"><span class="category-num">04 / STYLE</span><span class="category-icon">✧</span><strong>Lifestyle</strong><span class="circle-link">↗</span></button>
+      <div class="hero-visual">
+        <div class="hero-img hero-dog"><img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1500&q=85" alt="Golden retriever puppy in warm sunshine" fetchpriority="high"></div>
+        <div class="hero-img hero-cat"><img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=950&q=80" alt="Curious tabby cat looking up"></div>
+        <div class="hero-img hero-elephant"><img src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?auto=format&fit=crop&w=950&q=80" alt="Beautiful elephant in the wild"></div>
+        <div class="hero-pill"><span>♥</span> EVERY ANIMAL HAS A STORY</div>
+        <div class="hero-sun" aria-hidden="true">✺</div>
       </div>
     </section>
 
-    <section id="discover" class="section discoveries">
-      <div class="section-intro"><div><p class="kicker">02 — HANDPICKED</p><h2>Worth a <i>closer look.</i></h2></div><p>Products go live here once their retailer and affiliate links have been verified.</p></div>
-      <div class="filters"><label for="search">SEARCH THE EDIT</label><input id="search" type="search" placeholder="Search products or brands..."><select id="category-select" aria-label="Filter by category"><option value="all">All categories</option><option>Electronics</option><option>Home</option><option>Beauty</option><option>Lifestyle</option></select></div>
-      <div id="products" class="product-grid"></div><p id="empty" class="empty" hidden>No matching products yet. New finds are on their way.</p>
+    <div class="ticker" aria-label="Our values"><div class="ticker-inner"><span>LOVE THEM ALL</span><span class="tick-icon">✳</span><span>PAWS, WINGS & WONDER</span><span class="tick-icon">✳</span><span>FIND YOUR WILD SIDE</span><span class="tick-icon">✳</span><span>GOOD THINGS HAVE PAWS</span></div></div>
+
+    <section class="section section-explore container" id="explore" aria-labelledby="explore-title">
+      <div class="section-head">
+        <div><div class="eyebrow"><span>01</span> / DISCOVER THEIR WORLD</div><h2 id="explore-title">Every animal.<br><em>Every kind of love.</em></h2></div>
+        <p>Whether you live for puppy cuddles, cat naps, or the wonder of the wild, there's a little something here for you.</p>
+      </div>
+      <div class="category-grid" id="category-grid"></div>
     </section>
 
-    <section id="how" class="how"><div class="how-text"><p class="kicker">03 — THE IDEA</p><h2>Simple to browse.<br><i>Easy to love.</i></h2></div><div class="steps"><div><b>01</b><strong>Discover</strong><p>Explore products we've selected from around the web.</p></div><div><b>02</b><strong>Choose</strong><p>See honest product details and compare your options.</p></div><div><b>03</b><strong>Shop direct</strong><p>Complete your purchase on the retailer's website. They manage payment, shipping and returns.</p></div></div></section>
+    <section class="section section-gallery" id="animals" aria-labelledby="animals-title">
+      <div class="container">
+        <div class="section-head gallery-head"><div><div class="eyebrow"><span>02</span> / THE ANIMAL EDIT</div><h2 id="animals-title">Faces that make<br><em>us feel things.</em></h2></div><p>A handpicked little gallery celebrating the creatures that make our world extraordinary.</p></div>
+        <div class="gallery-toolbar">
+          <div class="filter-chips" id="filter-chips" role="group" aria-label="Filter animal photographs">
+            <button class="chip is-active" type="button" data-filter="All" aria-pressed="true">All animals</button>
+            <button class="chip" type="button" data-filter="Pets" aria-pressed="false">Pets</button>
+            <button class="chip" type="button" data-filter="Wildlife" aria-pressed="false">Wildlife</button>
+            <button class="chip" type="button" data-filter="Birds" aria-pressed="false">Birds</button>
+          </div>
+          <label class="search-control"><svg class="icon"><use href="#i-search"/></svg><input type="search" id="gallery-search" placeholder="Search an animal..." aria-label="Search the animal gallery"></label>
+        </div>
+        <div id="gallery" class="gallery-grid" aria-live="polite"></div>
+        <p id="empty-gallery" class="empty-gallery" hidden>No matches here yet. Try a different animal or filter.</p>
+        <div class="gallery-caption"><span class="mini-spark">✳</span> Photography is for inspiration. Wild animals belong in the wild, not in our homes.</div>
+      </div>
+    </section>
+
+    <section class="mission-band" id="about">
+      <div class="mission-photo"><img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1400&q=85" loading="lazy" alt="A happy dog enjoying time outdoors"><span class="mission-photo-tag">OUR HAPPY PLACE ♡</span></div>
+      <div class="mission-content">
+        <div class="eyebrow light"><span>03</span> / THE FRAPONOVA SPIRIT</div>
+        <h2>For their<br><em>beautiful little lives.</em></h2>
+        <p>We believe every animal brings something wonderful to our world. Fraponova Pets is our space to celebrate the bond we share with animals — through photography, practical inspiration and stories worth passing on.</p>
+        <div class="mission-list"><span><b>✳</b> Love, always</span><span><b>✳</b> Care, thoughtfully</span><span><b>✳</b> Respect the wild</span></div>
+        <a href="mailto:support@fraponova.com?subject=Hello%20Fraponova%20Pets" class="btn btn-cream">Say hello to us <svg class="icon"><use href="#i-arrow"/></svg></a>
+      </div>
+    </section>
+
+    <section class="section stories container" id="stories">
+      <div class="section-head"><div><div class="eyebrow"><span>04</span> / STORIES & LITTLE LESSONS</div><h2>Good reads for<br><em>good humans.</em></h2></div><p>Gentle reminders and simple ideas to make life a little richer for the animals we love.</p></div>
+      <div class="story-grid">
+        <article class="story-card"><div class="story-image"><img loading="lazy" src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=900&q=80" alt="Relaxed cat resting at home"><span>CAT LIFE</span></div><div class="story-body"><div class="story-meta">PETS / 3 MIN READ</div><h3>Small rituals, happy cats.</h3><p>Cozy corners, a little playtime, and more ways to enrich a cat's day.</p><button type="button" class="story-link" data-article="cat">Read the story <svg class="icon"><use href="#i-arrow"/></svg></button></div></article>
+        <article class="story-card"><div class="story-image"><img loading="lazy" src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=900&q=80" alt="Cheerful golden retriever dog"><span>DOG LIFE</span></div><div class="story-body"><div class="story-meta">PETS / 3 MIN READ</div><h3>Adventure starts outside.</h3><p>A walk together is more than exercise — it's discovery, sniffing, and connection.</p><button type="button" class="story-link" data-article="dog">Read the story <svg class="icon"><use href="#i-arrow"/></svg></button></div></article>
+        <article class="story-card"><div class="story-image"><img loading="lazy" src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?auto=format&fit=crop&w=900&q=80" alt="Majestic elephant"><span>THE WILD</span></div><div class="story-body"><div class="story-meta">NATURE / 4 MIN READ</div><h3>Make room for the wild.</h3><p>Why admiring nature means respecting the space wild animals need to thrive.</p><button type="button" class="story-link" data-article="wild">Read the story <svg class="icon"><use href="#i-arrow"/></svg></button></div></article>
+      </div>
+    </section>
+
+    <section class="section newsletter-section" id="contact">
+      <div class="container newsletter-inner"><div><div class="eyebrow">LET'S KEEP IN TOUCH</div><h2>Love animals?<br><em>You're our people.</em></h2><p>Ideas, collaborations, pet recommendations or just a hello — we'd love to hear from you.</p><a class="btn btn-dark" href="mailto:support@fraponova.com?subject=Hello%20Fraponova%20Pets"><svg class="icon"><use href="#i-mail"/></svg> Email our team</a></div><div class="newsletter-illustration"><div class="orbit orbit-1"></div><div class="orbit orbit-2"></div><span class="orbit-heart">♡</span><span class="big-paw">✿</span><span class="contact-email">support@fraponova.com</span></div></div>
+    </section>
   </main>
-  <footer><div class="footer-top"><span class="brand"><span class="mark">✳</span> FRAPO<span class="accent">NOVA.</span></span><span>Find better. Every day.</span></div><p class="disclosure">Affiliate disclosure: We may earn a commission when you buy through links on this site, at no additional cost to you. Prices, availability and shipping terms are set by the retailer. Purchases, payments, delivery and returns are handled by the seller.</p><div class="footer-bottom"><span>© <span id="year"></span> Fraponova</span><span>Independent affiliate discovery store</span></div></footer>
-  <script src="/app.js" defer></script>
+
+  <footer class="footer">
+    <div class="container"><div class="footer-upper">
+      <div class="footer-brand"><a class="brand" href="/"><img src="/favicon.svg" alt="" width="49" height="49"><span>frapo<span>nova</span><small>PETS & CO.</small></span></a><p>A universe of paws, wings and wild wonders.<br>Made for people who love animals.</p><div class="footer-socials"><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" title="Instagram — profile link to be added" aria-label="Instagram"><svg class="icon"><use href="#i-instagram"/></svg></a><a href="mailto:support@fraponova.com" title="Email Fraponova" aria-label="Email"><svg class="icon"><use href="#i-mail"/></svg></a></div></div>
+      <div class="footer-nav"><div><h3>Discover</h3><a href="#explore">Animal categories</a><a href="#animals">Photo gallery</a><a href="#stories">The journal</a></div><div><h3>Fraponova</h3><a href="#about">Our story</a><a href="mailto:support@fraponova.com">Contact us</a><button type="button" id="open-privacy">Privacy & disclosure</button></div><div><h3>Get in touch</h3><a class="email-link" href="mailto:support@fraponova.com">support@fraponova.com</a><span>Follow along on Instagram ♡</span></div></div>
+    </div><div class="footer-bottom"><span>© <span id="year"></span> Fraponova Pets. Made with ♡ for animals.</span><span>Care for pets. Respect wildlife.</span></div></div>
+  </footer>
+
+  <dialog class="content-dialog" id="content-dialog" aria-labelledby="dialog-title"><form method="dialog"><button class="dialog-close" aria-label="Close dialog"><svg class="icon"><use href="#i-close"/></svg></button></form><div class="dialog-inner"><div class="eyebrow" id="dialog-kicker">FRAPONOVA PETS</div><h2 id="dialog-title">Our journal</h2><div id="dialog-copy"></div></div></dialog>
 </body>
 </html>
