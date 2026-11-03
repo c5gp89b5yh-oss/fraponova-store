@@ -15,7 +15,7 @@ async function init(){
    empty.hidden=items.length!==0;
    for(const item of items){
     const card=document.createElement('article');card.className='card';
-    const art=document.createElement('div');art.className='art';art.setAttribute('aria-hidden','true');art.textContent=item.symbol||'✦';
+    const art=document.createElement('div');art.className='art';art.setAttribute('aria-hidden','true');art.classList.add('offer-art-surface');
     const body=document.createElement('div');body.className='card-body';
     const type=document.createElement('span');type.className='pill';type.textContent=item.category;
     const title=document.createElement('h3');title.textContent=item.name;
@@ -23,13 +23,13 @@ async function init(){
     const locale=supportedLanguages.has(language.value)?language.value:'en';
     const url=safeTrackingUrl(item.links?.[locale]||item.links?.default);
     const action=document.createElement(url?'a':'span');action.className=url?'offer-link':'disabled';
-    action.textContent=url?'View advertiser offer':'Offer unavailable';
+    action.textContent=url?'Consulter l’offre':'Offre indisponible';
     if(url){action.href=url;action.target='_blank';action.rel='sponsored nofollow noopener noreferrer';action.setAttribute('aria-label','View advertiser offer for '+item.name+' (opens new tab)')}
     body.append(type,title,description,action);card.append(art,body);cards.append(card);
    }
   };
   category.addEventListener('change',render);language.addEventListener('change',render);render();
-  message.textContent='Affiliate links lead to independent advertisers. Check the offer terms and your location before purchasing.';
- }catch{message.textContent='Offers are temporarily unavailable. Please try again later.';cards.replaceChildren()}
+  message.textContent='Liens affiliés vers des annonceurs indépendants. Vérifiez les conditions et la disponibilité avant tout achat.';
+ }catch{message.textContent='Les offres sont temporairement indisponibles. Veuillez réessayer plus tard.';cards.replaceChildren()}
 }
 init();
