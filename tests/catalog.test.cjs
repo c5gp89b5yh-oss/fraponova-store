@@ -31,10 +31,10 @@ test('affiliate anchors include sponsored and security rel values',()=>{
 test('production homepage, robots and product list remain in safe initial state',()=>{
  assert.match(read('robots.txt'),/Allow: \/$/m);assert.match(read('robots.txt'),/Sitemap: https:\/\/fraponova.com\/sitemap\.xml/);
  assert.deepEqual(JSON.parse(read('products.json')),[]);
- assert.match(read('index.html'),/Indépendant par nature/);assert.match(read('index.html'),/class="category-dock"/);assert.match(read('index.html'),/L’univers/);
+ assert.match(read('index.html'),/Le futur a/);assert.match(read('index.html'),/class="universe-grid"/);assert.match(read('index.html'),/brand-logo\.svg/);
  assert.match(read('index.html'),/id="collection"/);
- assert.match(read('index.html'),/id="cards"/);
- assert.match(read('index.html'),/catalog-preview\.js/);
+ assert.match(read('produits.html'),/id="cards"/);
+ assert.match(read('produits.html'),/catalog-preview\.js/);
  assert.match(read('pets.html'),/Fraponova Pets/);
 });
 
@@ -46,6 +46,6 @@ test('SEO sitemap contains all real, canonical public pages',()=>{
 });
 test('category navigation uses real crawlable paths, no decorative icons',()=>{
  const home=read('index.html');for(const page of ['categories','produits','smartphones','informatique','audio','maison','lifestyle','a-propos'])assert.ok(home.includes('/'+page+'.html'));
- assert.doesNotMatch(home,/visual-label label-top|visual-ring ring-one/);
+ assert.doesNotMatch(home,/visual-label label-top|visual-ring ring-one|category-dock|signature-ticker/);
  assert.doesNotMatch(read('catalog-preview.js'),/item.symbol/);
 });
