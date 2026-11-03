@@ -1,2 +1,4 @@
 User-agent: *
-Disallow: /
+Allow: /
+Disallow: /catalog-preview.html
+Sitemap: https://fraponova.com/sitemap.xml
