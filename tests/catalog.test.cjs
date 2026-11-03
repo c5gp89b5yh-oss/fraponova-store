@@ -31,5 +31,6 @@ test('affiliate anchors include sponsored and security rel values',()=>{
 test('production homepage, robots and product list remain in safe initial state',()=>{
  assert.match(read('robots.txt'),/Disallow: \/$/m);
  assert.deepEqual(JSON.parse(read('products.json')),[]);
- assert.match(read('index.html'),/Affiliate disclosure/);\n assert.match(read('pets.html'),/Fraponova Pets/);
+ assert.match(read('index.html'),/Affiliate disclosure/);
+ assert.match(read('pets.html'),/Fraponova Pets/);
 });
