@@ -31,7 +31,7 @@ test('affiliate anchors include sponsored and security rel values',()=>{
 test('production homepage, robots and product list remain in safe initial state',()=>{
  assert.match(read('robots.txt'),/Disallow: \/$/m);
  assert.deepEqual(JSON.parse(read('products.json')),[]);
- assert.match(read('index.html'),/Independent by design/);
+ assert.match(read('index.html'),/Indépendant par nature/);assert.match(read('index.html'),/class="category-dock"/);assert.match(read('index.html'),/L’univers/);
  assert.match(read('index.html'),/id="collection"/);
  assert.match(read('index.html'),/id="cards"/);
  assert.match(read('index.html'),/catalog-preview\.js/);
